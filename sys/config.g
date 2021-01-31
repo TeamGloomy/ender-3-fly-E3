@@ -39,6 +39,7 @@ M574 Z1 S1 P"zstop"                      		; configure active-high endstop for l
 
 ; Z-Probe
 M558 P0 H6 F120 T8000 							; disable Z probe but set dive height, probe speed and travel speed
+G31 X0 Y0 Z0									; no probe offsets
 
 ; Heaters
 M308 S0 P"bedtemp" Y"thermistor" T100000 B4092 	; configure sensor 0 as thermistor on pin bedtemp
