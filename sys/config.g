@@ -46,11 +46,11 @@ M308 S0 P"bedtemp" Y"thermistor" T100000 B4092 	; configure sensor 0 as thermist
 M950 H0 C"bed" T0                              	; create bed heater output on bed and map it to sensor 0
 M307 H0 B0 S1.00                               	; disable bang-bang mode for the bed heater and set PWM limit
 M140 H0                                        	; map heated bed to heater 0
-M143 H0 S150                                   	; set temperature limit for heater 0 to 120C
+M143 H0 S120                                   	; set temperature limit for heater 0 to 120C
 M308 S1 P"e0temp" Y"thermistor" T100000 B4092  	; configure sensor 1 as thermistor on pin e0temp
 M950 H1 C"e0heat" T1                           	; create nozzle heater output on e0heat and map it to sensor 1
 M307 H1 B0 S1.00                               	; disable bang-bang mode for heater  and set PWM limit
-M143 H1 S275                                   	; set temperature limit for heater 1 to 280C
+M143 H1 S245                                   	; set temperature limit for heater 1 to 280C
 
 ; Fans
 M950 F0 C"fan0" Q500                           	; create fan 0 on pin fan0 and set its frequency
@@ -67,4 +67,5 @@ G10 P0 R0 S0                                   	; set initial tool 0 active and 
 
 M207 S5 F2400 Z0.5								; Firmware retraction, 5mm with 0.5 z-hop
 M918 P1 E4 F1000000								; Setup the 12864 screen
+M572 D0 S1.3									; Add pressure advance for stock bowden
 M501											; Load anything from config-override.g
