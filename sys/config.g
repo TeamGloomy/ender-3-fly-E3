@@ -65,6 +65,7 @@ G10 P0 R0 S0                                   	; set initial tool 0 active and 
 
 ; Custom settings are not defined
 
+M575 P1 S0 B57600								; Fly Screen setting
 M207 S5 F2400 Z0.5								; Firmware retraction, 5mm with 0.5 z-hop
 M918 P1 E4 F1000000								; Setup the 12864 screen
 M572 D0 S1.3									; Add pressure advance for stock bowden

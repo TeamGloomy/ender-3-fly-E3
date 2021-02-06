@@ -9,31 +9,33 @@
 //    : Comments can be defined with // or # (comments are not supported inside arrays)
 //    : Each config entry must be all on a single line.
 
-lpc.board = fly_E3; 
+lpc.board = fly_E3						; Sets the board type
 
 //LED blinks to indicate Platform is spinning or other diagnostic 
 //Comment out or set to NoPin if not wanted.
-leds.diagnostic = A.8; 
+leds.diagnostic = A.8					; Sets the diagnostic LED
 
 //TMC Smart Drivers
-stepper.numSmartDrivers = 4;
+stepper.numSmartDrivers = 4				; Number of Smart Drivers
 
-heat.tempSensePins = {bedtemp, e0temp};
+heat.tempSensePins = {bedtemp, e0temp}	; Temperature Sensor Filtering
 
-8266wifi.espDataReadyPin = E.13;
-8266wifi.lpcTfrReadyPin = E.14;
-8266wifi.espResetPin = E.15;
+8266wifi.espDataReadyPin = E.13			; For wifi
+8266wifi.lpcTfrReadyPin = E.14			; For wifi
+8266wifi.espResetPin = E.15				; For wifi
 
-8266wifi.serialRxTxPins = { D.9, D.8 } ;
+8266wifi.serialRxTxPins = { D.9, D.8 } 	; For wifi
 
-softwareSPI1.pins = {C.2,C.0,C.1}
-heat.spiTempSensorChannel = 4
-heat.spiTempSensorCSPins = {C.3, C.7}
+SPI4.pins = {C.2,C.0,C.1}				; Sets the SPI pins for PT100
+heat.spiTempSensorChannel = 4			; Sets the SPI channel
+heat.spiTempSensorCSPins = {C.3, C.7}	; Sets the CS pin for channel 4
 
-lcd.encoderPinA=E.9
-lcd.encoderPinB=E.10
-lcd.encoderPinSw=E.11
-lcd.lcdCSPin=E.7
-lcd.spiChannel=3
-softwareSPI.pins={E.8, NoPin, B.1}
-lcd.lcdBeepPin = E.12
+lcd.encoderPinA=E.9						; Sets encoder direction A
+lcd.encoderPinB=E.10					; Sets encoder direction B
+lcd.encoderPinSw=E.11					; Sets encoder button pin
+lcd.lcdCSPin=E.7						; Sets CS pin
+lcd.spiChannel=3						; Sets the SPI channel
+SPI3.pins={E.8, NoPin, B.1}				; Sets the SPI pins
+lcd.lcdBeepPin = E.12					; Sets the LCD beeper
+
+serial.aux.rxTxPins = {A.10, A.9}		; Sets the pins for the Serial screen
