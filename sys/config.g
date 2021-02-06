@@ -18,7 +18,7 @@ M586 P2 S0                                     	; disable Telnet
 M569 P0 S0 D3 V40                         		; physical drive 0 goes forwards using default driver timings
 M569 P1 S0 D3 V40                         		; physical drive 1 goes forwards using default driver timings
 M569 P2 S1 D3 V40                          		; physical drive 2 goes forwards using default driver timings
-M569 P3 S1                                		; physical drive 3 goes forwards using default driver timings
+M569 P3 S0                                		; physical drive 3 goes forwards using default driver timings
 M584 X0 Y1 Z2 E3                          		; set drive mapping
 M350 X16 Y16 Z16 E16 I1                   		; configure microstepping with interpolation
 M92 X80.00 Y80.00 Z400.00 E93.00          		; set steps per mm
