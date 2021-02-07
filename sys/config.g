@@ -38,8 +38,10 @@ M574 Y1 S1 P"ystop"                     		; configure active-high endstop for lo
 M574 Z1 S1 P"zstop"                      		; configure active-high endstop for low end on Z via pin zstop
 
 ; Z-Probe
-M558 P0 H6 F120 T8000 							; disable Z probe but set dive height, probe speed and travel speed
-G31 X0 Y0 Z0									; no probe offsets
+M558 P9 H6 F120 T8000 C"^probe" R0.2 A5 B1		; BLTouch Z probe but set dive height, probe speed and travel speed
+M950 S0 C"servo0"                              	; Setup servo 0 as servo port
+G31 P25 X-40 Y-12 z1
+M557 X10:190 Y10:210 S20                       ; define mesh grid
 
 ; Heaters
 M308 S0 P"bedtemp" Y"thermistor" T100000 B4092 	; configure sensor 0 as thermistor on pin bedtemp
