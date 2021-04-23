@@ -25,7 +25,7 @@ M92 X80.00 Y80.00 Z400.00 E93.00          		; set steps per mm
 M566 X1200.00 Y1200.00 Z60.00 E300.00     		; set maximum instantaneous speed changes (mm/min)
 M203 X9000.00 Y9000.00 Z1800.00 E6000.00   		; set maximum speeds (mm/min)
 M201 X500.00 Y500.00 Z100.00 E5000.00     		; set accelerations (mm/s^2)
-M906 X1200 Y1200 Z1200 E1200 I30           		; set motor currents (mA) and motor idle factor in per cent
+M906 X1000 Y1000 Z1000 E1000 I30           		; set motor currents (mA) and motor idle factor in per cent
 M84 S30                                        	; Set idle timeout
 
 ; Axis Limits
@@ -70,5 +70,5 @@ G10 P0 R0 S0                                   	; set initial tool 0 active and 
 M575 P1 S0 B57600								; Fly Screen setting
 M207 S5 F2400 Z0.5								; Firmware retraction, 5mm with 0.5 z-hop
 M918 P1 E4 F1000000								; Setup the 12864 screen
-M572 D0 S1.3									; Add pressure advance for stock bowden
+M572 D0 S1.3									; Add pressure advance for stock bowden. Change this value if your machine isnt stock!!!!
 M501											; Load anything from config-override.g
