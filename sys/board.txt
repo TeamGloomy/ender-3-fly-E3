@@ -9,7 +9,7 @@
 //    : Comments can be defined with // or # (comments are not supported inside arrays)
 //    : Each config entry must be all on a single line.
 
-lpc.board = fly_E3						; Sets the board type
+board = fly_E3						; Sets the board type
 
 //LED blinks to indicate Platform is spinning or other diagnostic 
 //Comment out or set to NoPin if not wanted.
